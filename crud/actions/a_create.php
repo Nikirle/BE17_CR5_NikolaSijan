@@ -34,7 +34,7 @@ if($_POST){
     $sql="INSERT INTO animal (name,address,description,size,age,vaccinated,breed,status,picture)
     VALUES('$name','$address','$desc','$size',$age,'$vac','$breed','$status','$picture->fileName')";
 
-
+       
     if(mysqli_query($connect,$sql)){
         $class="success";
         $message="The entry below was successfully created <br>

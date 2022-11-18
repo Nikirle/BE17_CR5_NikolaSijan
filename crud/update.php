@@ -110,7 +110,7 @@ if($_GET['id']){
                         <th>Size</th>
                         <td><select name="size" value="<?= $size?>" >
                             <option value="big">big</option>
-                            <option value="big">small</option>
+                            <option value="small">small</option>
                         </select></td>
                     </tr> 
                     <tr>

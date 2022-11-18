@@ -11,33 +11,35 @@ if(isset($_SESSION['user'])){
 }
 }
 
-$sql ="SELECT * FROM user WHERE id = {$_SESSION['adm']}";
-$result=mysqli_query($connect,$sql);
-$row=mysqli_fetch_assoc($result);
+ $sql ="SELECT * FROM user WHERE id = {$_SESSION['adm']}";
+ $result=mysqli_query($connect,$sql);
+ $row=mysqli_fetch_assoc($result);
 
-$fname=$row['first_name'];
-$lname=$row['last_name'];
-$email=$row['email'];
-$phone=$row['phone_number'];
-$picture=$row['picture'];
-$status=$row['status'];
-$address=$row['address'];
+ $fname=$row['first_name'];
+ $lname=$row['last_name'];
+ $email=$row['email'];
+ $phone=$row['phone_number'];
+ $picture=$row['picture'];
+ $status=$row['status'];
+ $address=$row['address'];
 
-// $sql="SELECT * FROM users WHERE id={$_SESSION['user']}";
-// $result1=mysqli_query($connect,$sql);
+ $sql1="SELECT * FROM user WHERE status='user' " ;
+ $result1=mysqli_query($connect,$sql1);
+    
+ $tbody="";
 
-
-// if(mysqli_num_rows($result1)>0){
-//     while($row1=mysqli_fetch_assoc($result1)){
-//         $tbody .= "<tr>
-//         <td>".$row1['picture']."</td>
-//         <td>".$row1['first_name']."</td>
-//         <td>".$row1['date_of_birth']."</td>
-//         <td>".$row1['email']."</td>
-//         <td>edit delete</td>
-//         </tr>";
-//     }
-//}
+ if(mysqli_num_rows($result1)>0){
+     while($row=mysqli_fetch_assoc($result1)){
+         $tbody .= "<tr>
+         <td><img style='height:3rem;' src='pictures/{$row['picture']}'></td>
+         <td>".$row['first_name']."</td>
+         <td>".$row['last_name']."</td>
+         <td>".$row['email']."</td>
+            <td>".$row['phone_number']."</td>
+        
+         </tr>";
+     }
+}
 
 ?>
 
@@ -73,14 +75,14 @@ $address=$row['address'];
                     <thead class='table-light'>
                         <tr>
                             <th>Picture</th>
-                            <th>Name</th>
-                            <th>Date of birth</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
                             <th>Email</th>
-                            <th>Action</th>
+                            <th>Phone</th>
                         </tr>
                     </thead>
                     <tbody>
-                    
+                    <?= $tbody ?>
                     </tbody>
                 </table>
             </div>

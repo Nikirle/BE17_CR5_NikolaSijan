@@ -56,7 +56,7 @@ if(isset($_SESSION['user'])){
                     </tr>
                     <tr>
                         <th>Vaccinated</th>
-                        <td><select name="vac">
+                        <td><select name="vac" value="yes">
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select></td>
@@ -76,7 +76,7 @@ if(isset($_SESSION['user'])){
                         <th>Size</th>
                         <td><select name="size">
                             <option value="big">big</option>
-                            <option value="big">small</option>
+                            <option value="small">small</option>
                         </select></td>
                     </tr> 
                     <tr>

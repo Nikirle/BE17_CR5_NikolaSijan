@@ -24,7 +24,7 @@ $status=$row['status'];
 $phone=$row['phone_number'];
 
 
-$sql ="SELECT * FROM animal";
+$sql ="SELECT * FROM animal WHERE age>7";
 $result = mysqli_query($connect,$sql);
 $card="";
 
@@ -89,11 +89,11 @@ if(mysqli_num_rows($result)>0){
     <div class="d-flex gap-3 p-3 justify-content-between align-items-center bg">
         <div class="d-flex gap-3 align-items-center"><img class="img-thumbnail" src="pictures/<?= $picture?>">
         <div><h2>Hi, <?= $fname?></h2> </div>
-        <div><a class="btn btn-outline-primary ms-1" href="senior.php">Seniors</a></div>
+        <a href= "home.php"><button class="btn btn-outline-primary ms-1" type="button">All Animals</button></a>
     </div>
         <div><a class="btn btn-outline-danger ms-1" href="logout.php?logout">Log Out</a></div>
     </div>
-            
+
     <div class="container">
     <div class="row p-3 gap-3"> 
         <?= $card ?>
