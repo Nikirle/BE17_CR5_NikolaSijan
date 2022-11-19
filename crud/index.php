@@ -68,10 +68,14 @@ if(mysqli_num_rows($result)>0){
             tr {
                 text-align: center;
             }
+
+            .bg{
+                background-color:beige;
+            }
         </style>
     </head>
-    <body>
-        <div class="manageProduct w-75 mt-3 ">    
+    <body class="bg">
+        <div class=" manageProduct w-75 mt-3 ">    
             <div class='mb-3'>
                 <a href= "create.php"><button class='btn btn-primary'type="button" >Add animal</button></a>
                 <a href= "../dashboard.php"><button class='btn btn-success'type="button" >Dashboard</button></a>

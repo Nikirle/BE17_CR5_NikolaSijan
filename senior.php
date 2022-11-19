@@ -80,13 +80,16 @@ if(mysqli_num_rows($result)>0){
             .bg{
                 background-color:beige;
             }
+            .bg1{
+                background-color:burlywood;
+            }
     </style>
 
 </head>
 
 
-<body>
-    <div class="d-flex gap-3 p-3 justify-content-between align-items-center bg">
+<body class="bg">
+    <div class="d-flex gap-3 p-3 justify-content-between align-items-center bg1">
         <div class="d-flex gap-3 align-items-center"><img class="img-thumbnail" src="pictures/<?= $picture?>">
         <div><h2>Hi, <?= $fname?></h2> </div>
         <a href= "home.php"><button class="btn btn-outline-primary ms-1" type="button">All Animals</button></a>

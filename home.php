@@ -49,7 +49,7 @@ if(mysqli_num_rows($result)>0){
         </ul>
         <div class='card-body'>
         <a class='text-decoration-none' href='details.php?id=" .$row['id']."'><button class='btn btn-info btn-sm' type='button'> Show Details</button></a>
-        <a class='text-decoration-none' href='home.php?id=" . $row['id'] ."'><button class='btn btn-success btn-sm'>Take me home</button></a>
+        <a class='text-decoration-none' href='adopt.php?id=" . $row['id'] ."'><button class='btn btn-success btn-sm'>Take me home</button></a>
         
 
             </div>
@@ -84,13 +84,16 @@ if(mysqli_num_rows($result)>0){
             .bg{
                 background-color:beige;
             }
+            .bg1{
+                background-color:burlywood;
+            }
     </style>
 
 </head>
 
 
-<body>
-    <div class="d-flex gap-3 p-3 justify-content-between align-items-center bg">
+<body class="bg">
+    <div class="d-flex gap-3 p-3 justify-content-between align-items-center bg1">
         <div class="d-flex gap-3 align-items-center"><img class="img-thumbnail" src="pictures/<?= $picture?>">
         <div><h2>Hi, <?= $fname?></h2> </div>
         <div><a class="btn btn-outline-primary ms-1" href="senior.php">Seniors</a></div>

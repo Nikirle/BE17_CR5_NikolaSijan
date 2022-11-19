@@ -43,9 +43,13 @@ if ($_GET['id']) {
                 width: 90px !important;
                 height: 90px !important;
             }     
+            .bg{
+                background-color:beige;
+            }
+           
         </style>
     </head>
-    <body>
+    <body class="bg">
         <fieldset>
             <legend class='h2'>Details<img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
             <form action="details.php"  method="post" enctype="multipart/form-data">

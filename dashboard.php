@@ -53,10 +53,15 @@ if(isset($_SESSION['user'])){
     <title>Dashboard</title>
     <?php require_once 'components/boot.php' ?>
     <title>Welcome,<?php echo $fname ?></title>
+    <style>
+        .bg{
+                background-color:beige;
+            }
+    </style>
 
 </head>
 
-<body>
+<body class="bg">
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-3 my-4">

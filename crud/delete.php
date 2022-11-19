@@ -60,9 +60,12 @@ if($_GET['id']){
                 width: 70px !important;
                 height: 70px !important;
             }    
+            .bg{
+                background-color:beige;
+            }
         </style>
     </head>
-    <body>
+    <body class="bg">
         <fieldset>
             <legend class='h2 mb-3'>Delete request <img class='img-thumbnail rounded-circle' src='../pictures/<?= $picture?>' alt=""></legend>
             <h5>You have selected the data below:</h5>

@@ -58,9 +58,12 @@ if($_GET['id']){
                 width: 70px !important;
                 height: 70px !important;
             }     
+            .bg{
+                background-color:beige;
+            }
         </style>
     </head>
-    <body>
+    <body class="bg">
         <fieldset>
             <legend class='h2'>Update request <img class='img-thumbnail rounded-circle' src='../pictures/<?php echo $picture ?>' ></legend>
             <form action="actions/a_update.php" method="post" enctype="multipart/form-data" >

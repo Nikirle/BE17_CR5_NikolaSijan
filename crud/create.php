@@ -35,9 +35,12 @@ if(isset($_SESSION['user'])){
                 margin-top: 100px;
                 width: 60% ;
             }       
+            .bg{
+                background-color:beige;
+            }
         </style>
     </head>
-    <body>
+    <body class="bg">
         <fieldset>
             <legend class='h2'>Add Animal</legend>
             <form action="actions/a_create.php" method="post" enctype="multipart/form-data">
