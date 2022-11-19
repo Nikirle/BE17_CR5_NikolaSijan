@@ -33,8 +33,7 @@ if($_POST){
         $sql="UPDATE  animal SET name='$name',address='$address',age=$age,vaccinated='$vac',breed='$breed',status='$status',description='$desc',size='$size'  WHERE id=$id";
      }
 
-    //  ,fk_supplier_id=$supplier
-    //  ,fk_supplier_id=$supplier
+    
 
     if(mysqli_query($connect,$sql)){
 
@@ -45,9 +44,7 @@ if($_POST){
         header("location: ../error.php");
     }
 
-// } else {
-//     header("location: ../error.php");
-// }
+
 }
 ?>
 

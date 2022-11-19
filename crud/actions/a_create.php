@@ -23,13 +23,6 @@ if($_POST){
     $desc=$_POST['desc'];
     $picture=file_upload($_FILES['picture'],'animal');
     
-    
-
-    // if($supplier =='none'){
-    //     $sql="INSERT INTO products(name,price,picture,fk_supplier_id) VALUES('$name',$price,'$picture->fileName',null)";
-    // }else {
-    // $sql="INSERT INTO products(name,price,picture,fk_supplier_id) VALUES('$name',$price,'$picture->fileName',$supplier)";}
-
    
     $sql="INSERT INTO animal (name,address,description,size,age,vaccinated,breed,status,picture)
     VALUES('$name','$address','$desc','$size',$age,'$vac','$breed','$status','$picture->fileName')";

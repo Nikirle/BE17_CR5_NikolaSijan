@@ -30,17 +30,6 @@ if($_GET['id']){
 
 
 
-    // $sql="SELECT * FROM suppliers";
-    // $result=mysqli_query($connect,$sql);
-
-    // $supList="";
-
-    // while($row=mysqli_fetch_assoc($result)){
-    //     $supList .= "<option value='{$row['supId']}'>{$row['sup_name']}</option>";
-        
-    // }
-
-
   }else {
     header("location: error.php");
   } 

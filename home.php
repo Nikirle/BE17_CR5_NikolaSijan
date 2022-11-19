@@ -24,6 +24,7 @@ $status=$row['status'];
 $phone=$row['phone_number'];
 
 
+
 $sql ="SELECT * FROM animal";
 $result = mysqli_query($connect,$sql);
 $card="";
@@ -48,14 +49,17 @@ if(mysqli_num_rows($result)>0){
         </ul>
         <div class='card-body'>
         <a class='text-decoration-none' href='details.php?id=" .$row['id']."'><button class='btn btn-info btn-sm' type='button'> Show Details</button></a>
-        <a class='text-decoration-none' href='delete.php?id=" . $row['id'] ."'><button class='btn btn-success btn-sm'>Take me home</button></a>
+        <a class='text-decoration-none' href='home.php?id=" . $row['id'] ."'><button class='btn btn-success btn-sm'>Take me home</button></a>
         
 
             </div>
       </div>";
     }
-
 }
+
+ 
+
+
 
 ?>
 
