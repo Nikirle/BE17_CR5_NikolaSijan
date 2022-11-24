@@ -9,39 +9,34 @@ if(isset($_SESSION['user'])){
     header('location: ../home.php');
 }
 
-// $sql ="SELECT * FROM animal LEFT JOIN suppliers ON suppliers.supId=products.fk_supplier_id";
+
 $sql ="SELECT * FROM animal";
 $result = mysqli_query($connect,$sql);
-$card="";
+$tbody="";
 
 
 
 if(mysqli_num_rows($result)>0){
     while ($row = mysqli_fetch_assoc($result)){
-        $card .= "<div class='card' style='width: 18rem;'>
-        <img style='height:13rem;' src='../pictures/{$row['picture']}' class='card-img-top' alt='...'>
-        <div class='card-body'>
-          <h5 class='card-title'>{$row['name']}</h5>
-          <p class='card-text'>{$row['description']}</p>
-        </div>
-        <ul class='list-group list-group-flush'>
-          <li class='list-group-item'>Size: {$row['size']}</li>
-          <li class='list-group-item'>Age: {$row['age']}</li>
-          <li class='list-group-item'>Breed: {$row['breed']}</li>
-          <li class='list-group-item'>Vaccinated: {$row['vaccinated']}</li>
-          <li class='list-group-item'>Address: {$row['address']}</li>
-          <li class='list-group-item'>Status: {$row['status']}</li>
-
-    
-        </ul>
-        <div class='card-body'>
-        <a class='text-decoration-none' href='update.php?id=" . $row['id'] ."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
-        <a class='text-decoration-none' href='delete.php?id=" . $row['id'] ."'><button class='btn btn-danger btn-sm'>Delete</button></a>
-        
-
-            </div>
-      </div>";
-    }
+        $tbody .= "<tr>
+            <td><img style='width:150px; height:150px' src='../../pictures/" .$row['picture']."'</td>
+            <td>" .$row['name']."</td>
+            <td>" .$row['address']."</td>
+            <td>" .$row['description']."</td>
+            <td>" .$row['size']."</td>
+            <td>" .$row['age']."</td>
+            <td>" .$row['vaccinated']."</td>
+            <td>" .$row['breed']."</td>
+            <td>" .$row['status']."</td>
+            <td>
+            <a href='update.php?id=" .$row['id']."'><button class='btn btn-primary  btn-sm' type='button'>Edit</button></a>
+            <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger mt-3 btn-sm' type='button'>Delete</button></a>
+            
+            </td>   
+            </tr>";
+    };
+} else {
+    $tbody =  "<tr><td colspan='5'><center>No Data Available </center></td></tr>";
 }
 
 ?>
@@ -83,9 +78,24 @@ if(mysqli_num_rows($result)>0){
             </div>
             <p class='h2'>Animals</p>
             <div class="container">
-                <div class="row p-3 gap-3"> 
-                   <?= $card ?>
-                 </div>
+                <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">Picture</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Description</th>
+                <th scope="col">Size</th>
+                <th scope="col">Age</th>
+                <th scope="col">Vaccinated</th>
+                <th scope="col">Breed</th>
+                <th scope="col">Status</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <?= $tbody?>
+            </tbody>
+            </table>
              </div>
         </div>
     </body>

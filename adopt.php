@@ -16,8 +16,14 @@ if($_GET){
     
     $sql="INSERT INTO pet_adoption(fk_user_id,fk_pet_id) VALUES('$user_id', '$id')";
     if (mysqli_query($connect, $sql) === TRUE) {
+
+        $animal_status = "adopted";
+        $sql_animal = "UPDATE animal SET status='$animal_status' WHERE id = {$id}";
+        mysqli_query($connect,$sql_animal);
+
         $message = "<div>Your adopted successfully!</div>";
     } else {
+        
         $message = "Error.Please try again.. <br>";
     }
     

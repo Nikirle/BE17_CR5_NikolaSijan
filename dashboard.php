@@ -5,11 +5,12 @@ require_once './components/db_connect.php';
 
 if(!isset($_SESSION['user'])&&!isset($_SESSION['adm'])){
     header('location: index.php');
+}
 
 if(isset($_SESSION['user'])){
     header('location: home.php');
 }
-}
+
 
  $sql ="SELECT * FROM user WHERE id = {$_SESSION['adm']}";
  $result=mysqli_query($connect,$sql);
